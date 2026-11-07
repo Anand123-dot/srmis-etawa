@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>S.R. Memorial International School | Etawah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #17233c;
+        }
+
+        /* ================= TOP BAR ================= */
+
+        .topbar {
+            background: #071f49;
+            color: white;
+            padding: 9px 6%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: rgb(255, 255, 255);
+            padding: 14px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(9, 6, 205, 0);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand img {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+        }
+
+        .brand h1 {
+            color: #092c5c;
+            font-size: 23px;
+        }
+
+        .brand p {
+            color: #c58a00;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #092c5c;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+nav a:hover {
+            color: #ffd35a;
+        }
+       
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 560px;
+            background:
+                linear-gradient(
+                    rgba(3, 28, 65, .83),
+                    rgba(3, 28, 65, .83)
+                )
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h2 {
+            color: #3218a6;
+            font-size: 50px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero h5 {
+            color: #ffd35a;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1f0da4;
+        }
+    
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn-gold {
+            background: #d39a00;
+            color: white;
+        }
+
+        .btn-gold:hover {
+            background: #b27e00;
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: #09cc13;
+            color: white;
+        }
+
+        .btn-white:hover {
+            background: #1c9c1c;
+            transform: translateY(-2px);
+        }
+        /* ================= GENERAL INFORMATION ================= */
+
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #092c5c;
+            font-size: 35px;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .gold-line {
+            width: 70px;
+            height: 4px;
+            background: #d39a00;
+            margin: 13px auto;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            max-width: 1150px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,.09);
+        }
+
+        .info-heading {
+            background: linear-gradient(135deg, #092c5c, #124982);
+            color: white;
+            padding: 20px 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th {
+            background: #eef3f9;
+            color: #092c5c;
+            text-align: left;
+            padding: 17px;
+            border: 1px solid #d7dde6;
+        }
+
+        .info-table td {
+            padding: 17px;
+            border: 1px solid #e0e4ea;
+            color: #263652;
+        }
+
+        .info-table tr:hover td {
+            background: #fafcff;
+        }
+
+        .sl {
+            width: 75px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* ================= PRINCIPAL ================= */
+
+        .principal-section {
+            background: white;
+        }
+
+        .principal-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .principal-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .principal-photo .photo-placeholder {
+            width: 270px;
+            height: 350px;
+            margin: auto;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #092c5c, #174f8c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.18);
+            border: 6px solid #e2b536;
+        }
+
+        .principal-info {
+            flex: 1.5;
+        }
+
+        .principal-info h2 {
+            color: #092c5c;
+            font-size: 30px;
+            margin-bottom: 7px;
+        }
+
+        .principal-info h4 {
+            color: #c58a00;
+            margin-bottom: 22px;
+        }
+
+        .principal-info p {
+            color: #555;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+
+        .principal-quote {
+            border-left: 5px solid #d39a00;
+            background: #f4f7fb;
+            padding: 17px;
+            margin-top: 20px;
+            color: #092c5c;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            padding: 70px 7%;
+            background: #f4f7fb;
+        }
+
+        .feature-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px 22px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 7px 25px rgba(0,0,0,.07);
+            transition: .3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.12);
+        }
+
+        .feature-icon {
+            font-size: 43px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #092c5c;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: white;
+            padding: 70px 7%;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: #f4f7fb;
+            border-bottom: 4px solid #d39a00;
+        }
+
+        .contact-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            color: #092c5c;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #061d42;
+            color: white;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: #ffd35a;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer li {
+            color: #ccd5e2;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.18);
+            text-align: center;
+            color: #cbd3df;
+        }
+
+        .made-by {
+            color: #1b9f18;
+            font-weight: bold;
+            margin-top: 7px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 850px) {
+
+            .topbar {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .brand {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand h1 {
+                font-size: 18px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .principal-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                overflow-x: auto;
+            }
+
+            .info-table {
+                min-width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+    <span>Welcome to S.R. Memorial International School</span>
+    <span>📍 Etawah, Uttar Pradesh</span>
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="brand">
+
+        <!-- YOUR SCHOOL LOGO -->
+        <img
+            src="C:\Users\Anand\Desktop\school folder\Screenshot 2026-10-04 150615.png"
+            alt="S.R. Memorial International School Logo"
+        >
+
+        <div>
+            <h1>S.R. Memorial International School</h1>
+            <p>LEARN • LEAD • SUCCEED</p>
+        </div>
+
+    </div>
+
+    <nav>
+        <ul> 
+            <li><a href="#home">Home</a></li>
+            <li><a href="#principal">Principal</a></li>
+            <li><a href="#information">Information</a></li>
+            <li><a href="admission.html">Admission</a></li>
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>S.R. Memorial International School</h2>
+
+        <h5>Where Education Meets Excellence</h5>
+ <img        
+      src="C:\Users\Anand\Downloads\Screenshot 2026-10-04 193819.png"
+>
+        <p>
+            Welcome to S.R. Memorial International School, Etawah.
+            We are committed to providing quality education and
+            creating a strong foundation for the bright future of
+            every student.
+        </p>
+
+        <div class="buttons">
+
+            <a href="admission.html" class="btn btn-gold">
+                Apply for Admission
+            </a>
+
+            <a href="#information" class="btn btn-white">
+                School Information
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GENERAL INFORMATION
+===================================================== -->
+
+<section class="section" id="information">
+
+    <div class="section-title">
+
+        <h2>A. GENERAL INFORMATION</h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Important information about S.R. Memorial International School
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <div class="info-heading">
+            🏫 School General Information
+        </div>
+
+        <table class="info-table">
+
+            <thead>
+                <tr>
+                    <th class="sl">SL No.</th>
+                    <th>INFORMATION</th>
+                    <th>DETAILS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="sl">1</td>
+                    <td>NAME OF THE SCHOOL</td>
+                    <td>
+                        SR MEMORIAL INTERNATIONAL SCHOOL, ETAWAH
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="sl">2</td>
+                    <td>AFFILIATION NO (IF APPLICABLE)</td>
+                    <td>NA</td>
+                </tr>
+
+                <tr>
+                    <td class="sl">3</td>
+                    <td>SCHOOL CODE (IF APPLICABLE)</td>
+                    <td>NA</td>
+                </tr>
+
+                <tr>
+                    <td class="sl">4</td>
+                    <td>COMPLETE ADDRESS WITH PIN CODE</td>
+                    <td>
+                        BAUDH NAGAR, ADDA USARA, ETAWAH - 206002
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="sl">5</td>
+                    <td>PRINCIPAL NAME & QUALIFICATION</td>
+                    <td>
+                       ROY VARGISH
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="sl">6</td>
+                    <td>SCHOOL EMAIL ID</td>
+                    <td>
+                        srminternationals.office@gmail.com
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="sl">7</td>
+                    <td>CONTACT DETAILS (LANDLINE/MOBILE)</td>
+                    <td>
+                        +91 9084750211, +91 9084750212
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRINCIPAL MESSAGE
+===================================================== -->
+
+<section class="section principal-section" id="principal">
+
+    <div class="section-title">
+
+        <h2>Principal's Message</h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Message from the Principal
+        </p>
+
+    </div>
+
+
+    <div class="principal-container">
+
+        <div class="principal-photo">
+
+            <img src=
+
+            <div class="photo-placeholder">
+                
+            </div>
+
+        </div>
+        <div class="principal-info">
+
+            <h2>ROY VARGISH</h2>
+
+            <h4>Principal — S.R. Memorial International School</h4>
+
+            <p>
+                Dear Parents and Students,
+            </p>
+
+            <p>
+                It gives me immense pleasure to welcome you to
+                <strong>S.R. Memorial International School, Etawah.</strong>
+                We believe that education is not only about academic
+                achievement but also about developing character,
+                confidence, creativity and responsibility.
+            </p>
+
+            <p>
+                Our dedicated teachers work continuously to provide
+                students with a positive and encouraging environment
+                where they can discover their talents and achieve
+                their goals.
+            </p>
+
+            <p>
+                We strongly believe that cooperation between parents,
+                teachers and students is the key to building a bright
+                and successful future.
+            </p>
+
+            <div class="principal-quote">
+                "Education is the most powerful foundation for a
+                successful and meaningful future."
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCHOOL HIGHLIGHTS
+===================================================== -->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <h2>Our School Highlights</h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Building knowledge, character and confidence
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">📚</div>
+
+            <h3>Quality Education</h3>
+
+            <p>
+                Dedicated teaching and a student-focused learning
+                environment.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🏫</div>
+
+            <h3>Modern Learning</h3>
+
+            <p>
+                A positive and supportive environment designed
+                for effective learning.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🏆</div>
+
+            <h3>Overall Development</h3>
+
+            <p>
+                We encourage academics, sports, creativity,
+                discipline and leadership.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact-section">
+
+    <div class="section-title">
+
+        <h2>Get In Touch</h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <div class="icon">📍</div>
+
+            <h3>School Address</h3>
+
+            <p>
+                Baudh Nagar, Adda Usara,<br>
+                Etawah - 206002
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">📞</div>
+
+            <h3>Contact Us</h3>
+
+            <p>
+                +91 9084750211<br>
+                +91 9084750212
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">✉️</div>
+
+            <h3>Email</h3>
+
+            <p>
+                srminternationals.office@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>S.R. Memorial International School</h3>
+
+            <p>
+                Baudh Nagar, Adda Usara,<br>
+                Etawah - 206002
+            </p>
+
+            <p style="margin-top:10px;">
+                Quality Education • Discipline • Excellence
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li>Home</li>
+                <li>Principal</li>
+                <li>School Information</li>
+                <li>Admissions</li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>
+                📞 +91 9084750211
+            </p>
+
+            <p>
+                📞 +91 9084750212
+            </p>
+
+            <p>
+                ✉️ srminternationals.office@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 S.R. Memorial International School.
+        All Rights Reserved.
+
+        <div class="made-by">
+            Made by =  Anand 😎
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
